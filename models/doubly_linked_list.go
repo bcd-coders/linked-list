@@ -15,22 +15,24 @@ type DoublyLinkedList struct {
 }
 
 // AddNode adds a new node to the end of the linked list
-func (list *DoublyLinkedList) AddNodes(data int) {
-	newNode := &Node{data: data}
+func (list *DoublyLinkedList) AddNodes(data []int) {
+	for _, value := range data {
+		newNode := &Node{data: value}
 
-	if list.head == nil {
-		list.head = newNode
-		return
+		if list.head == nil {
+			list.head = newNode
+			continue
+		}
+
+		current := list.head
+		for current.next != nil {
+			current = current.next
+		}
+		current.next = newNode
+		newNode.prev = current
 	}
-
-	current := list.head
-	for current.next != nil {
-		current = current.next
-
-	}
-	current.next = newNode
-	newNode.prev = current
 }
+
 
 // Forwards prints the elements of the linked list forwards
 func (list *DoublyLinkedList) Forwards() {
@@ -48,6 +50,7 @@ func (list *DoublyLinkedList) Backwards() {
 	for current.next != nil {
 		current = current.next
 	}
+
 	for current != nil {
 		fmt.Printf("%d ", current.data)
 		current = current.prev
