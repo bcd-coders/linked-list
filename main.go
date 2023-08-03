@@ -12,9 +12,7 @@ func main() {
 
 	// elements to the linked list
 	l := []int{1, 2, 3, 4, 5}
-	for _, l := range l {
-		myList.AddNodes(l)
-	}
+	myList.AddNodes(l)
 
 	// Display the linked list forwards and backwards
 	fmt.Println("Linked List (Forwards):")
