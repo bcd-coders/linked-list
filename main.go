@@ -5,13 +5,13 @@ import (
 
 	"github.com/tanggol69/linked-list/tree/doubly-linked-list/models"
 )
+
 func main() {
 	// Create a new linked list
 	myList := models.DoublyLinkedList{}
 
 	// elements to the linked list
-	l := []int{1,2,3,4,5}
-	myList.AddNode(1)
+	l := []int{1, 2, 3, 4, 5}
 	for _, item := range l {
 		myList.AddNode(item)
 	}
