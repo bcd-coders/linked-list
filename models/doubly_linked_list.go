@@ -15,7 +15,7 @@ type DoublyLinkedList struct {
 }
 
 // AddNode adds a new node to the end of the linked list
-func (list *DoublyLinkedList) AddNode(data int) {
+func (list *DoublyLinkedList) AddNodes(data int) {
 	newNode := &Node{data: data}
 
 	if list.head == nil {
