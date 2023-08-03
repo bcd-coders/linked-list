@@ -12,8 +12,8 @@ func main() {
 
 	// elements to the linked list
 	l := []int{1, 2, 3, 4, 5}
-	for _, item := range l {
-		myList.AddNode(item)
+	for _, l := range l {
+		myList.AddNode(l)
 	}
 
 	// Display the linked list forwards and backwards

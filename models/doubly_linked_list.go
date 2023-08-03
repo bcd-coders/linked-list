@@ -2,7 +2,6 @@ package models
 
 import "fmt"
 
-
 // Node represents a single node in the doubly linked list
 type Node struct {
 	data int   // The data stored in the node, can be of any data type
@@ -27,7 +26,7 @@ func (list *DoublyLinkedList) AddNode(data int) {
 	current := list.head
 	for current.next != nil {
 		current = current.next
-		
+
 	}
 	current.next = newNode
 	newNode.prev = current
