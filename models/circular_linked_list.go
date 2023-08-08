@@ -6,7 +6,7 @@ type CircularLinkedList struct {
 	head *Node
 }
 
-func (list *CircularLinkedList) AddNodes(data []int) {
+func (list *CircularLinkedList) MakeCircular(data []int) {
 	for _, value := range data {
 		newNode := &Node{data: value}
 
@@ -29,10 +29,11 @@ func (list *CircularLinkedList) AddNodes(data []int) {
 	}
 }
 
-func (list *CircularLinkedList) IsCircular() {
+func (list *CircularLinkedList) IsCircular() bool{
 	if list == nil || list.head == nil {
 		// An empty list or a list with only one node is not circular
 		fmt.Println("The linkedlist is not circular")
+		return false
 	}
 
 	tortoise := list.head
@@ -45,10 +46,11 @@ func (list *CircularLinkedList) IsCircular() {
 		// If they are equal, it means they met each other within the loop
 		if tortoise == hare {
 			fmt.Println("The linkedlist is circular")
-			return
+			return true
 		}
 	}
 
 	// If the hare reaches the end of the list (nil), the list is not circular
 	fmt.Println("The linkedlist is not circular")
+	return false
 }

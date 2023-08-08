@@ -14,6 +14,19 @@ type DoublyLinkedList struct {
 	head *Node // A pointer to the first node (head) of the linked list.
 }
 
+func (list *DoublyLinkedList) Length() int {
+	if list == nil {
+		return 0
+	}
+	current := list.head
+	ctr := 0
+	for current != nil {
+		current = current.next
+		ctr++
+	}
+	return ctr
+}
+
 // AddNode adds a new node to the end of the linked list
 func (list *DoublyLinkedList) AddNodes(data []int) {
 	for _, value := range data {
@@ -32,7 +45,6 @@ func (list *DoublyLinkedList) AddNodes(data []int) {
 		newNode.prev = current
 	}
 }
-
 
 // Forwards prints the elements of the linked list forwards
 func (list *DoublyLinkedList) Forwards() {

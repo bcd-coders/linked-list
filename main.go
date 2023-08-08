@@ -16,7 +16,7 @@ func main() {
 	l := []int{1, 2, 3, 4, 5}
 	myList.AddNodes(l)
 
-	myList2.AddNodes(l)
+	myList2.MakeCircular(l)
 
 	// Display the linked list forwards and backwards
 	fmt.Println("Linked List (Forwards):")
